@@ -14,17 +14,15 @@ This program is built using C++ concepts and focuses on image processing techniq
 * Create animations by combining multiple photos
 ### Requirements
 * C++ compiler
-* OpenCV library
 ### How to run
 * Clone the repository
 * Copy code
-* git clone https://github.com/[username]/Cpp-Image-Processing-Game.git
+* git clone https://github.com/Anas-jpg/Assigment-And-Project/tree/main/Semester-1/Image-Processing-Project.git
 * Compile the code
 * Copy code
 * g++ main.cpp -o game `pkg-config --cflags --libs opencv`
 * Run the game
-Copy code
-./game
+
 
 
 ### HTML file is the Unversity Admission form and is built using HTML and CSS for development
