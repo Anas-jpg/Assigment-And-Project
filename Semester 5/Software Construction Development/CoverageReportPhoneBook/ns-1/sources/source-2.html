@@ -1,0 +1,367 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Phonebook</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.example</a>
+</div>
+
+<h1>Coverage Summary for Class: Phonebook (org.example)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Phonebook</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (12/12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    96.3%
+  </span>
+  <span class="absValue">
+    (180/187)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.example;
+&nbsp;
+&nbsp;import org.jetbrains.annotations.NotNull;
+&nbsp;
+&nbsp;import java.io.File;
+&nbsp;import java.io.FileNotFoundException;
+&nbsp;import java.io.FileWriter;
+&nbsp;import java.io.IOException;
+&nbsp;import java.io.PrintWriter;
+&nbsp;import java.util.Scanner;
+&nbsp;
+<b class="fc">&nbsp;public class Phonebook extends Phone {</b>
+&nbsp;    public Scanner sc ;
+&nbsp;
+&nbsp;    public char setname(String localname) {
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;        if (localname.length() &lt; 2) {</b>
+<b class="fc">&nbsp;            System.out.println(&quot;YOU ENTER INVALID NAME.....&quot;);</b>
+<b class="fc">&nbsp;            System.out.println(&quot;ENTER  NAME AGAIN&quot;);</b>
+<b class="fc">&nbsp;            return &#39;F&#39;;</b>
+&nbsp;
+<b class="fc">&nbsp;        } else if (localname.length() &gt; 2)</b>
+<b class="fc">&nbsp;            name = localname;</b>
+<b class="fc">&nbsp;        return &#39;P&#39;;</b>
+&nbsp;
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    public char setmobileno(String localmobilNo) {
+&nbsp;
+<b class="fc">&nbsp;        if (localmobilNo.length() &lt; 9) {</b>
+<b class="fc">&nbsp;            System.out.println(&quot;YOU ENTER INVALID NUMBER.....&quot;);</b>
+<b class="fc">&nbsp;            System.out.println(&quot;ENTER  NUMBER AGAIN&quot;);</b>
+<b class="fc">&nbsp;            return &#39;F&#39;;</b>
+&nbsp;        } else
+<b class="fc">&nbsp;            mobileno = localmobilNo;</b>
+<b class="fc">&nbsp;        return &#39;P&#39;;</b>
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    public char setemail(String localemail) {
+&nbsp;
+<b class="fc">&nbsp;        int a = localemail.length();</b>
+<b class="fc">&nbsp;        boolean b = false;</b>
+&nbsp;
+<b class="fc">&nbsp;        if (localemail.contains(&quot;@&quot;)) {</b>
+<b class="fc">&nbsp;            email = localemail;</b>
+<b class="fc">&nbsp;            return &#39;P&#39;;</b>
+&nbsp;        }
+<b class="fc">&nbsp;            return &#39;F&#39;;</b>
+&nbsp;    }
+&nbsp;    public char setnationality(String localnationality) {
+&nbsp;
+<b class="fc">&nbsp;        if (localnationality.length() &lt;= 3) {</b>
+<b class="fc">&nbsp;            System.out.println(&quot;YOU ENTER INVALID NATIONALITY&quot;);</b>
+<b class="fc">&nbsp;            System.out.println(&quot;ENTER  NATIONALITY AGAIN&quot;);</b>
+<b class="fc">&nbsp;            return &#39;F&#39;;</b>
+&nbsp;        } else
+&nbsp;
+<b class="fc">&nbsp;            nationality = localnationality;</b>
+<b class="fc">&nbsp;        return &#39;P&#39;;</b>
+&nbsp;    }
+&nbsp;    public char setcity( String localcity) {
+<b class="fc">&nbsp;        if (localcity.length() &lt; 3) {</b>
+<b class="fc">&nbsp;            System.out.println(&quot;YOU ENTER INVALID CITY&quot;);</b>
+<b class="fc">&nbsp;            System.out.println(&quot;ENTER  CITY AGAIN&quot;);</b>
+<b class="fc">&nbsp;            return &#39;F&#39;;</b>
+&nbsp;        }
+&nbsp;        else
+&nbsp;
+<b class="fc">&nbsp;            city = localcity;</b>
+&nbsp;
+<b class="fc">&nbsp;        return &#39;P&#39;;</b>
+&nbsp;    }
+&nbsp;    public void insert(String filename) throws IOException {
+&nbsp;
+<b class="fc">&nbsp;        PrintWriter obj = null;</b>
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;        File file = new File(filename);</b>
+<b class="fc">&nbsp;        FileWriter fw = new FileWriter(file, true);</b>
+<b class="fc">&nbsp;        obj = new PrintWriter(fw);</b>
+<b class="fc">&nbsp;        obj.println(mobileno + &quot; &quot; + name + &quot; &quot; + email + &quot; &quot; + nationality + &quot; &quot; + city);</b>
+<b class="fc">&nbsp;        System.out.println(&quot;PRESS ENTER TO CONTINUE&quot;);</b>
+&nbsp;
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;    public void view(String filename) throws FileNotFoundException {
+&nbsp;        String readbyString, nam, no, emal, nation, cite;
+&nbsp;
+<b class="fc">&nbsp;        File obj = new File(filename);</b>
+&nbsp;
+<b class="fc">&nbsp;        Scanner file = new Scanner(obj);</b>
+<b class="fc">&nbsp;        while (file.hasNext()) {</b>
+<b class="fc">&nbsp;            no = file.next();</b>
+<b class="fc">&nbsp;            nam = file.next();</b>
+<b class="fc">&nbsp;            emal = file.next();</b>
+<b class="fc">&nbsp;            nation = file.next();</b>
+<b class="fc">&nbsp;            cite = file.next();</b>
+<b class="fc">&nbsp;            System.out.println(&quot;NUMBER=&quot; + no + &quot; &quot; + &quot;NAME=&quot; + nam + &quot;  &quot; + &quot;EMAIL=&quot; + emal + &quot;  &quot; + &quot;NATIONALITY=&quot; + nation + &quot;  &quot;);</b>
+<b class="fc">&nbsp;            System.out.println(&quot;CITY=&quot; + cite + &quot;  &quot;);</b>
+&nbsp;
+&nbsp;        }
+<b class="fc">&nbsp;        file.close();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void search(String SearchRecord) throws FileNotFoundException {
+&nbsp;
+&nbsp;        String search_by_no, nam, numb, no, emal, nation, cite;
+&nbsp;
+&nbsp;
+<b class="fc">&nbsp;        File obj = new File(&quot;phone.txt&quot;);</b>
+&nbsp;
+<b class="fc">&nbsp;        Scanner file = new Scanner(obj);</b>
+<b class="fc">&nbsp;        while (file.hasNext()) {</b>
+<b class="fc">&nbsp;            no = file.next();</b>
+&nbsp;
+<b class="fc">&nbsp;            nam = file.next();</b>
+<b class="fc">&nbsp;            emal = file.next();</b>
+<b class="fc">&nbsp;            nation = file.next();</b>
+<b class="fc">&nbsp;            cite = file.next();</b>
+<b class="fc">&nbsp;            if (no.equals(SearchRecord)) {</b>
+&nbsp;
+<b class="fc">&nbsp;                System.out.println(&quot;NUMBER=&quot; + no + &quot; &quot; + &quot;NAME=&quot; + nam + &quot;  &quot; + &quot;EMAIL=&quot; + emal + &quot;  &quot; + &quot;NATIONALITY=&quot; + nation + &quot;  &quot;);</b>
+<b class="fc">&nbsp;                System.out.println(&quot;CITY=&quot; + cite + &quot;  &quot;);</b>
+<b class="fc">&nbsp;                break;</b>
+&nbsp;            }
+&nbsp;
+&nbsp;
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        file.close();</b>
+&nbsp;
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    public String edit(String search_by_no) throws IOException {
+<b class="fc">&nbsp;        String nam = null, numb, no = null, emal, nation = null, cite;</b>
+<b class="fc">&nbsp;        boolean prcham = false;</b>
+&nbsp;
+<b class="fc">&nbsp;        PrintWriter temp = null;</b>
+&nbsp;
+<b class="fc">&nbsp;        File obj = new File(&quot;phone.txt&quot;);</b>
+<b class="fc">&nbsp;        Scanner file = new Scanner(obj);</b>
+<b class="fc">&nbsp;        File tep = new File(&quot;temp.txt&quot;);</b>
+<b class="fc">&nbsp;        FileWriter fw = new FileWriter(tep);</b>
+<b class="fc">&nbsp;        temp = new PrintWriter(fw);</b>
+<b class="fc">&nbsp;        numb=&quot;03126006132&quot;;</b>
+<b class="fc">&nbsp;        nam=&quot;Ali&quot;;</b>
+<b class="fc">&nbsp;        emal=&quot;Ali@a.com&quot;;</b>
+<b class="fc">&nbsp;        cite=&quot;Depalpur&quot;;</b>
+<b class="fc">&nbsp;        </b>
+<b class="fc">&nbsp;        while (file.hasNext()) {</b>
+<b class="fc">&nbsp;            no = file.next();</b>
+<b class="fc">&nbsp;            if (no.equals(search_by_no)) {</b>
+<b class="fc">&nbsp;                prcham = true;</b>
+<b class="fc">&nbsp;                System.out.println( &quot;Enter YOUR NUMBER:&quot; );</b>
+<b class="fc">&nbsp;                System.out.println( &quot;Enter Name:&quot; );</b>
+<b class="fc">&nbsp;                System.out.println( &quot;Enter EMAIL ADDRESS:&quot; );</b>
+<b class="fc">&nbsp;                System.out.println( &quot;Enter NATION:&quot; );</b>
+<b class="fc">&nbsp;                System.out.println( &quot;Enter CITY:&quot; );</b>
+<b class="fc">&nbsp;                temp.println(numb + &quot; &quot; + nam + &quot; &quot; + emal + &quot; &quot; + nation + &quot; &quot; + cite);</b>
+<b class="fc">&nbsp;                nam=file.next();emal=file.next();nation=file.next();cite=file.next();</b>
+<b class="fc">&nbsp;                System.out.println( &quot;Record Edit Successfully.&quot;);</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;            }</b>
+<b class="fc">&nbsp;            else {</b>
+<b class="fc">&nbsp;                nam = file.next();</b>
+<b class="fc">&nbsp;                emal = file.next();</b>
+<b class="fc">&nbsp;                nation = file.next();</b>
+<b class="fc">&nbsp;                cite = file.next();</b>
+<b class="fc">&nbsp;                temp.println(no + &quot; &quot; + nam + &quot; &quot; + emal + &quot; &quot; + nation + &quot; &quot; + cite);</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;            }</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        if (prcham == false) {</b>
+<b class="fc">&nbsp;            System.out.println(&quot;DATA ARE NOT EXIST WHICH YOU WANT TO EDIT----------&quot;);</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        file.close();</b>
+<b class="fc">&nbsp;        File myObj = new File(&quot;phone.txt&quot;);</b>
+<b class="fc">&nbsp;        myObj.delete();</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;        if (temp != null) {</b>
+<b class="fc">&nbsp;            temp.close();</b>
+<b class="fc">&nbsp;            File file2 = new File(&quot;phone.txt&quot;);</b>
+<b class="fc">&nbsp;            File tep1 = new File(&quot;temp.txt&quot;);</b>
+<b class="fc">&nbsp;            tep1.renameTo(file2);</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return no;</b>
+<b class="fc">&nbsp;    }</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;    public String deleteparticular(String search_by_no) throws IOException {</b>
+<b class="fc">&nbsp;        String  nam, numb, no = null, emal, nation, cite;</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;        boolean prcham = false;</b>
+&nbsp;
+<b class="fc">&nbsp;        PrintWriter temp=null;</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;            File obj= new File(&quot;phone.txt&quot;);</b>
+<b class="fc">&nbsp;            Scanner file = new Scanner(obj);</b>
+<b class="fc">&nbsp;            File tep = new File(&quot;temp.txt&quot;);</b>
+<b class="fc">&nbsp;            FileWriter fw = new FileWriter(tep);</b>
+<b class="fc">&nbsp;            temp = new PrintWriter(fw) ;</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;            while (file.hasNext()) {</b>
+<b class="fc">&nbsp;                no=file.next();</b>
+<b class="fc">&nbsp;                if(no.equals(search_by_no))</b>
+<b class="fc">&nbsp;                {</b>
+<b class="fc">&nbsp;                    prcham = true;</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;                    nam=file.next();</b>
+<b class="fc">&nbsp;                    Scanner sc = new Scanner(System.in);</b>
+<b class="fc">&nbsp;                    return sc.next();</b>
+<b class="nc">&nbsp;</b>
+<b class="fc">&nbsp;</b>
+<b class="nc">&nbsp;                }</b>
+<b class="fc">&nbsp;                else</b>
+<b class="fc">&nbsp;                {</b>
+<b class="fc">&nbsp;                    nam=file.next();</b>
+<b class="fc">&nbsp;                    emal=file.next();</b>
+<b class="fc">&nbsp;                    nation=file.next();</b>
+<b class="fc">&nbsp;                    cite=file.next();</b>
+<b class="fc">&nbsp;                    temp.println(no + &quot; &quot; + nam + &quot; &quot; + emal + &quot; &quot; + nation + &quot; &quot; + cite);</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;                }</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;            }</b>
+<b class="fc">&nbsp;            if (prcham == false)</b>
+<b class="fc">&nbsp;            {</b>
+<b class="fc">&nbsp;                System.out.println(&quot;DATA ARE NOT EXIST ----------&quot; );</b>
+<b class="fc">&nbsp;            }</b>
+<b class="fc">&nbsp;            file.close();</b>
+<b class="fc">&nbsp;            File myObj = new File(&quot;phone.txt&quot;);</b>
+<b class="fc">&nbsp;            myObj.delete();</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;         {</b>
+<b class="fc">&nbsp;            if (temp != null) {</b>
+<b class="fc">&nbsp;                temp.close();</b>
+<b class="fc">&nbsp;                File file2 = new File(&quot;phone.txt&quot;);</b>
+<b class="fc">&nbsp;                File tep1 = new File(&quot;temp.txt&quot;);</b>
+<b class="fc">&nbsp;                tep1.renameTo(file2);</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;            }</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return no;</b>
+<b class="fc">&nbsp;    }</b>
+<b class="fc">&nbsp;    public void deleteall(String Filename) throws FileNotFoundException</b>
+<b class="nc">&nbsp;    {</b>
+<b class="fc">&nbsp;        File myObj = new File(Filename);</b>
+<b class="fc">&nbsp;        myObj.delete();</b>
+<b class="nc">&nbsp;    }</b>
+&nbsp;
+<b class="fc">&nbsp;</b>
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-11-27 00:07</div>
+</div>
+</body>
+</html>
