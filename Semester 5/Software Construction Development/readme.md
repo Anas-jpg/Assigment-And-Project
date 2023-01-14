@@ -4,4 +4,4 @@ This repository contains resources for learning about software construction and 
 * File Handling
 * Collections
 * JUnit Testing
-* Data Structure Arrays
+* Data Structure: Arrays,LinkedList
